@@ -1,0 +1,104 @@
+.title {
+  margin-top: 100px;
+  font-weight: 100;
+  font-size: 30px;
+}
+.slogan {
+  color: white;
+  font-weight: 100;
+  margin-top: 50px;
+  font-size: 20px;
+}
+.divider {
+  border-top-color: white;
+  width: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+.circle {
+  height: 250px;
+  width: 250px;
+  background-color: white;
+  border-radius: 50%;
+}
+.mat-card {
+  background-color: #1d1d1d;
+  box-shadow: none;
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mat-button {
+  border: 1px solid white;
+  color: white;
+  width: 220px;
+  height: 60px;
+}
+.text-photo {
+  position: absolute;
+  text-align: justify;
+  top: 70%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+}
+.icon {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.title-photo {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.third-photo {
+  width: 480px;
+  height: 280px;
+  margin-left: 20px;
+  filter: blur(15px);
+}
+.photo-container {
+  position: relative;
+  display: inline-block;
+}
+.second-photo {
+  margin-left: 20px;
+}
+.inline-photos {
+  display: inline-block;
+  margin-top: 200px;
+}
+.paragraph {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  margin-top: 100px;
+}
+
+.block {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 150px;
+  height: 300px;
+}
+.block-paragraph {
+  margin-top: 50px;
+}
+.photo-left {
+  height: 200px;
+  width: 200px;
+  float: left;
+  margin: 20px;
+}
+.photo-right {
+  height: 200px;
+  width: 200px;
+  float: right;
+  margin: 20px;
+}

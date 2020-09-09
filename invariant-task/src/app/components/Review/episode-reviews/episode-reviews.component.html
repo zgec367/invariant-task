@@ -1,0 +1,108 @@
+<div
+  style="
+    display: inline-block;
+    width: 350px;
+    height: 350px;
+    background-color: #f3f3f3;
+    border-radius: 1px;
+  "
+>
+  <img
+    src="{{ episodeDetail.url }}"
+    style="height: 300px; width: 300px; margin: 25px; cursor: pointer"
+  />
+</div>
+<div
+  style="
+    display: inline-block;
+    width: 400px;
+    height: 350px;
+    background-color: #f3f3f3;
+    border-radius: 1px;
+    color: #1d1d1d;
+  "
+>
+  <h1 style="float: left; margin: 20px">
+    {{ episodeDetail.episode }}
+  </h1>
+  <div style="float: left; margin: 30px">
+    <ng-container *ngFor="let star of stars">
+      <app-star [starId]="star" [rating]="rating"> </app-star>
+    </ng-container>
+    <h2 *ngIf="rating">Avarage rating: {{ rating }}</h2>
+    <h2 *ngIf="!rating">The episode has no reviews</h2>
+  </div>
+  <button
+    mat-raised-button
+    color="primary"
+    style="
+      background-color: #1d1d1d;
+      color: white;
+      float: left;
+      top: 5%;
+      left: 25%;
+      height: 60px;
+      margin: 20px;
+      border: 2px solid #1d1d1d !important;
+    "
+    (click)="addReview()"
+  >
+    Write a review
+  </button>
+</div>
+<div
+  style="
+    width: 750px;
+    min-height: 400px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  "
+>
+  <h1 style="font-size: 45px; margin: 20px; color: #1d1d1d">
+    Reviews ({{ numberOfReviews }})
+  </h1>
+
+  <div
+    *ngFor="let review of reviews"
+    style="color: #1d1d1d; margin: 20px; font-size: 20px"
+  >
+    <h3 style="display: inline-block">{{ review.commentary }}</h3>
+    <div style="float: right">
+      <button mat-icon-button matTooltip="Edit" (click)="editReview(review.id)">
+        <mat-icon color="primary">edit</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        matTooltip="Delete"
+        (click)="deleteReview(review.id)"
+      >
+        <mat-icon color="primary">delete</mat-icon>
+      </button>
+
+      <button mat-button [matMenuTriggerFor]="menu" matTooltip="Move">
+        <mat-icon color="primary">unfold_more</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="listItemUp(review.id)">
+          <mat-icon color="primary">expand_less</mat-icon>
+          Above
+        </button>
+        <button mat-menu-item (click)="listItemDown(review.id)">
+          <mat-icon color="primary">expand_more</mat-icon>
+          Below
+        </button>
+      </mat-menu>
+    </div>
+    <div>
+      <ng-container *ngFor="let star of stars">
+        <app-star [starId]="star" [rating]="review.stars"> </app-star>
+      </ng-container>
+    </div>
+  </div>
+</div>

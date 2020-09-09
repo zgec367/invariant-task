@@ -1,0 +1,58 @@
+<div class="app-reviews-container">
+  <mat-form-field class="filter" color="primary">
+    <input placeholder="Search" [(ngModel)]="listFilterEpisode" matInput />
+    <mat-icon style="font-size: 30px; margin: 5px" matPrefix>search</mat-icon>
+  </mat-form-field>
+
+  <div
+    *ngFor="let tile of filteredEpisodes"
+    style="margin-top: 100px; color: #1d1d1d"
+  >
+    <div
+      style="
+        display: inline-block;
+        width: 350px;
+        height: 350px;
+        background-color: #f3f3f3;
+        border-radius: 1px;
+      "
+    >
+      <img
+        src="{{ tile.url }}"
+        style="height: 300px; width: 300px; margin: 25px; cursor: pointer"
+        routerLinkActive="active"
+        [routerLink]="['/episode-reviews', tile]"
+      />
+    </div>
+    <div
+      style="
+        display: inline-block;
+        width: 400px;
+        height: 350px;
+        background-color: #f3f3f3;
+        border-radius: 1px;
+      "
+    >
+      <h1 style="float: left; margin: 20px">
+        {{ tile.episode }}
+      </h1>
+      <button
+        mat-stroked-button
+        color="primary"
+        style="
+          float: right;
+          height: 36px;
+          margin: 20px;
+          border: 2px solid #1d1d1d !important;
+        "
+        routerLinkActive="active"
+        [routerLink]="['/episode-reviews/', tile]"
+      >
+        See all reviews
+      </button>
+      <p style="float: left; text-align: left; margin-top: 80px">
+        {{ tile.about }}
+      </p>
+    </div>
+  </div>
+</div>

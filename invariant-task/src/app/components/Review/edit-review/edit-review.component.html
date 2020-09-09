@@ -1,0 +1,47 @@
+<div>
+  <h2 mat-dialog-title>Edit review - {{ review.episode }}</h2>
+
+  <mat-dialog-content style="text-align: center">
+    <form #form="ngForm" class="form-container">
+      <mat-label>Rating</mat-label>
+      <br />
+      <ng-container *ngFor="let star of stars">
+        <app-star
+          [starId]="star"
+          [rating]="hoverState || rating"
+          (starEnter)="onenter($event)"
+          (starLeave)="onleave()"
+          (starClicked)="onclick($event)"
+        >
+        </app-star>
+      </ng-container>
+      <mat-form-field appearance="outline" style="width: 400px">
+        <mat-label>Comentary</mat-label>
+        <textarea
+          matInput
+          id="commentary"
+          name="commentary"
+          rows="5"
+          mat-autosize="false"
+          [disabled]="saving"
+          required
+          [(ngModel)]="review.commentary"
+        ></textarea>
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+
+  <mat-dialog-actions style="float: right">
+    <button
+      mat-button
+      color="primary"
+      [disabled]="!form.valid || saving"
+      (click)="submitReview(form)"
+    >
+      <mat-icon>save</mat-icon>Save
+    </button>
+    <button mat-button color="primary" (click)="dismiss()" [disabled]="saving">
+      <mat-icon>cancel</mat-icon>Cancel
+    </button>
+  </mat-dialog-actions>
+</div>

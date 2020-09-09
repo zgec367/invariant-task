@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="toolbarTitle">Invariant</span>
+
+    <mat-button-toggle-group class="toogle-group">
+      <span class="example-spacer"></span>
+      <mat-button-toggle routerLinkActive="active" [routerLink]="['/home']"
+        >TimeWeb</mat-button-toggle
+      >
+
+      <mat-button-toggle routerLinkActive="active" [routerLink]="['/reviews']"
+        >Lista( {{ reviews.length }} )</mat-button-toggle
+      >
+
+      <mat-button-toggle>Web dizajn</mat-button-toggle>
+      <mat-button-toggle>O nama</mat-button-toggle>
+      <mat-button-toggle>Kontakt</mat-button-toggle>
+    </mat-button-toggle-group>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="router-container">
+  <router-outlet></router-outlet>
+</div>

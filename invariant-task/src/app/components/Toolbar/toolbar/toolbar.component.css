@@ -1,0 +1,41 @@
+.toolbarTitle {
+  color: white;
+  font-size: 40px;
+  font-weight: 100;
+}
+.mat-button-toggle {
+  background-color: #1d1d1d;
+  color: white;
+  transform: skew(-20deg);
+  margin-left: 20px;
+  justify-content: space-evenly;
+}
+.mat-button-toggle:hover {
+  background-color: white;
+  color: #1d1d1d;
+}
+.active {
+  background-color: white;
+  color: #1d1d1d;
+}
+.toogle-group {
+  width: 100%;
+}
+.router-container {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+.example-spacer {
+  flex: 0.9;
+}
+.mat-toolbar {
+  background-color: #1d1d1d;
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+}
+.mat-button-toggle-group {
+  border: none;
+}
